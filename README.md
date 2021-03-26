@@ -7,6 +7,12 @@
 
 Tool for viewing the difference between two CSV, TSV or JSON files. See [Generating a commit log for San Francisco’s official list of trees](https://simonwillison.net/2019/Mar/13/tree-history/) (and the [sf-tree-history repo commit log](https://github.com/simonw/sf-tree-history/commits)) for background information on this project.
 
+### Additions
+
+Leveraging the output of `diff`, a few new functions were created to convert the changes into SQL statements.  
+
+The function `diff_to_sql` takes the `diff` dictionary, the table name, and the primary key for the table.
+
 ## Installation
 
     pip install csv-diff
@@ -125,4 +131,4 @@ If the columns in the CSV have changed, those added or removed columns will be i
 
 Suppose current directory contains two csv files : one.csv two.csv
 
-    $ docker run --rm -v $(pwd):/files csvdiff one.csv two.csv
+    $ docker run --rm -v $(pwd):/files csvdiff one.csv two.cs
